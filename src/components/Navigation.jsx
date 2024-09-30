@@ -1,21 +1,22 @@
+import {Link} from 'react-router-dom'
+
+const data = [
+    { label: 'HOME', to: '/' },
+    { label: 'ABOUTME', to: '/About' },
+    { label: 'PROJECTS', to: '/Display' },
+    { label: 'CONTACTME', to: '/Contact' },
+];
+
 function Navigation() {
-    function handleClick(e) {
-        e.preventDefault();
-        console.log('The link was clicked.');
-      }
-     return (
-        <nav className="header">
-            <ul>
-                <li>
-                    <a href="#about-me" onClick={handleClick} className="list-group-item list-group-item-action"> About Me </a>
-                </li>
-                <li>
-                    <a href="#my-work" onClick={handleClick} className="list-group-item list-group-item-action">My Work</a>
-                </li>
-                <li>
-                    <a href="#contact-me" onClick={handleClick} className="list-group-item list-group-item-action">Contact Me</a>
-                </li>
-            </ul>
+    return (
+        <nav className="navigation">
+            <div className="navigation-bar">
+                {data.map((item) => (
+                    <Link key={item.to} to={item.to}>
+                        <button>{item.label}</button>
+                    </Link>
+                ))}
+            </div>
         </nav>
     );
 }

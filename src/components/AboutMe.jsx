@@ -3,7 +3,7 @@ function AboutMe() {
     return (
         <div>
             <div className="hero">
-                <img src="./Assets/images/Bung.JPG" className="Bung"/>
+                <img src="src\assets\Bung.JPG" className="Bung"/>
             </div>
             <aside>
                 <section id="about-me" className="about-me">
